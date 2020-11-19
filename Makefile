@@ -40,7 +40,7 @@ LIB_CFLAGS = -std=c++1z -g -Wall -Werror $(OPT_FLAG)
 
 static :=yes
 ifeq ($(static), yes)
-	LIB_BUILD  = ../../lib/lib$(NAME).a
+	LIB_BUILD  = ./$(NAME).a
 	LIBLINKER = $(AR)
 	LIB_LFLAGS = rs
 else
@@ -75,7 +75,7 @@ $(SRCPARSER)/bison_parser.h: $(SRCPARSER)/bison_parser.cpp
 $(SRCPARSER)/flex_lexer.h: $(SRCPARSER)/flex_lexer.cpp
 
 clean:
-	rm -f ../../lib/lib$(NAME).a ../../lib/lib$(NAME).so
+	rm -f ./lib$(NAME).a ./lib$(NAME).so
 	rm -rf $(BIN)
 	find $(SRC) -type f -name '*.o' -delete
 
