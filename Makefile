@@ -40,7 +40,7 @@ LIB_CFLAGS = -std=c++1z -g -Wall -Werror $(OPT_FLAG)
 
 static :=yes
 ifeq ($(static), yes)
-	LIB_BUILD  = ./$(NAME).a
+	LIB_BUILD  = ./lib$(NAME).a
 	LIBLINKER = $(AR)
 	LIB_LFLAGS = rs
 else
